@@ -29,6 +29,7 @@ REC_TIME = int(inifile['DEFAULT']['rec_time'])
 u1g_xmode = 0
 
 # test
+# test
 
 #-------------------------------
 def cam_set(DEVICE_ID,WIDTH,HEIGHT,FPS):
