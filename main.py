@@ -9,7 +9,6 @@ import configparser
 import discord_bot
 
 #保存先のディレクトリ
-# REC_DIR = '/media/usb1/rec_seccam/'
 REC_DIR = '/home/waduhek/work/seccam/out/'
 #デバイスIDの設定
 CAMID1 = 0
