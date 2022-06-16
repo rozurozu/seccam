@@ -30,6 +30,7 @@ u1g_xmode = 0
 
 # test
 # test
+# test
 
 #-------------------------------
 def cam_set(DEVICE_ID,WIDTH,HEIGHT,FPS):
