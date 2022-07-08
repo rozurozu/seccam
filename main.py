@@ -9,7 +9,7 @@ import configparser
 import discord_bot
 
 #保存先のディレクトリ
-# REC_DIR = '/media/usb1/rec_seccam/'
+REC_DIR2 = '/media/usb1/rec_seccam/'
 REC_DIR = '/home/waduhek/work/seccam/out/'
 #デバイスIDの設定
 CAMID1 = 0
@@ -131,7 +131,7 @@ def capture_movie():
                     dt_now = datetime.datetime.now()
                     filename = (dt_now.strftime('%Y%m%d%H%M%S') + '.avi')
                     u1t_xfilename = 1
-                    video=cv2.VideoWriter(REC_DIR+filename,fourcc,FPS,(WIDTH+WIDTH,HEIGHT))
+                    video=cv2.VideoWriter(REC_DIR2+filename,fourcc,FPS,(WIDTH+WIDTH,HEIGHT))
                     # video=cv2.VideoWriter(filename,fourcc,FPS,(WIDTH+WIDTH,HEIGHT))
             
                 # 動画ファイル書き込み
@@ -150,8 +150,8 @@ def capture_movie():
                     u1t_xfilename = 0 
                     u1t_xdetect = 0
                     before = None #動体検知用の画像削除
-                    discord_bot.send_capture(REC_DIR, filename)
-                    os.remove(REC_DIR + filename)
+                    discord_bot.send_capture(REC_DIR2, filename)
+                    # os.remove(REC_DIR + filename)
                     video.release()
                 
 
@@ -175,6 +175,7 @@ def capture_movie():
                 cap2.release()
             u1t_xfilename = 0 
             u1t_xdetect = 0
+            time_recstart = 0
             DEVICE_ID = CAMID1
             cap1=cam_set(DEVICE_ID,WIDTH,HEIGHT,FPS)
             DEVICE_ID = CAMID2
