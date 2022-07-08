@@ -178,7 +178,6 @@ def capture_movie():
             cap1=cam_set(DEVICE_ID,WIDTH,HEIGHT,FPS)
             DEVICE_ID = CAMID2
             cap2=cam_set(DEVICE_ID,WIDTH,HEIGHT,FPS)
-            break
             
 #-------------------------------
 def main( ):
