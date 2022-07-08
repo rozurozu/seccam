@@ -152,6 +152,7 @@ def capture_movie():
                     before = None #動体検知用の画像削除
                     discord_bot.send_capture(REC_DIR, filename)
                     os.remove(REC_DIR + filename)
+                    video.release()
                 
 
         # 監視モードOFF
@@ -163,6 +164,21 @@ def capture_movie():
             # tmpフォルダの動画全削除
             shutil.rmtree(REC_DIR)
             os.mkdir(REC_DIR)
+            break
+        
+        # 監視モードOFF
+        if u1g_xmode == 0:
+            # VideoCaptureオブジェクトお掃除
+            if cap1:
+                cap1.release()
+            if cap2:
+                cap2.release()
+            u1t_xfilename = 0 
+            u1t_xdetect = 0
+            DEVICE_ID = CAMID1
+            cap1=cam_set(DEVICE_ID,WIDTH,HEIGHT,FPS)
+            DEVICE_ID = CAMID2
+            cap2=cam_set(DEVICE_ID,WIDTH,HEIGHT,FPS)
             break
             
 #-------------------------------
